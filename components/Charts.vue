@@ -1,10 +1,8 @@
 <template>
   <div>
-
-    <!--Stats cards-->
-    <div class="row">
-      <div class="col-md-6 col-xl-3" v-for="stats in statsCards" :key="stats.title">
-        <no-ssr placeholder="Loading...">
+      <!--Stats cards-->
+      <div class="row">
+        <div class="col-md-6 col-xl-3" v-for="stats in statsCards" :key="stats.title">
           <stats-card>
             <div class="icon-big text-center" :class="`icon-${stats.type}`" slot="header">
               <i :class="stats.icon"></i>
@@ -17,15 +15,13 @@
               <i :class="stats.footerIcon"></i> {{stats.footerText}}
             </div>
           </stats-card>
-        </no-ssr>
+        </div>
       </div>
-    </div>
 
-    <!--Charts-->
-    <div class="row">
+      <!--Charts-->
+      <div class="row">
 
-      <div class="col-12">
-        <no-ssr placeholder="Loading...">
+        <div class="col-12">
           <chart-card title="Users behavior"
                       sub-title="24 Hours performance"
                       :chart-data="usersChart.data"
@@ -39,11 +35,9 @@
               <i class="fa fa-circle text-warning"></i> Click Second Time
             </div>
           </chart-card>
-        </no-ssr>
-      </div>
+        </div>
 
-      <div class="col-md-6 col-12">
-        <no-ssr placeholder="Loading...">
+        <div class="col-md-6 col-12">
           <chart-card title="Email Statistics"
                       sub-title="Last campaign performance"
                       :chart-data="preferencesChart.data"
@@ -56,11 +50,9 @@
               <i class="fa fa-circle text-warning"></i> Unsubscribe
             </div>
           </chart-card>
-        </no-ssr>
-      </div>
+        </div>
 
-      <div class="col-md-6 col-12">
-        <no-ssr placeholder="Loading...">
+        <div class="col-md-6 col-12">
           <chart-card title="2015 Sales"
                       sub-title="All products including Taxes"
                       :chart-data="activityChart.data"
@@ -73,16 +65,14 @@
               <i class="fa fa-circle text-warning"></i> BMW 5 Series
             </div>
           </chart-card>
-        </no-ssr>
-      </div>
+        </div>
 
-    </div>
+      </div>
 
   </div>
 </template>
 <script>
   import { StatsCard, ChartCard } from "@/components/index";
-  import Chartist from '~/plugins/chartist.js';
 
   export default {
     components: {
@@ -92,6 +82,15 @@
     /**
      * Chart data used to render stats, charts. Should be replaced with server data
      */
+    mounted() {
+      import('chartist').then((Chartist) => {
+        let ChartistLib = Chartist.default || Chartist ;
+        this.usersChart.options.lineSmooth = Chartist.Interpolation.simple({
+          divisor: 3
+        })
+      });
+
+    },
     data() {
       return {
         statsCards: [
@@ -154,9 +153,7 @@
             axisX: {
               showGrid: false
             },
-            lineSmooth: Chartist.Interpolation.simple({
-              divisor: 3
-            }),
+            lineSmooth: null,
             showLine: true,
             showPoint: false
           }

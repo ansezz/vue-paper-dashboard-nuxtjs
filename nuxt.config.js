@@ -1,11 +1,21 @@
 module.exports = {
   plugins: [
-    '~/plugins/dashboard',
-    {src: '~plugins/chartist', ssr: false}
+    '~/plugins/dashboard'
   ],
   css: [
     'vue-notifyjs/themes/default.css'
   ],
+  router: {
+    linkActiveClass: 'active',
+    linkExactActiveClass: 'exact-active',
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/not-found-page.vue')
+      })
+    }
+  },
   /*
   ** Headers of the page
   */
