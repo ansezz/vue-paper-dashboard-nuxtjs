@@ -1,6 +1,15 @@
 # vue-paper-dashboard-nuxtjs
 
-> NuxtJs version of vue paper dashboard
+### [Nuxt Js SSR version of Creative Tim Paper Dashboard made for Vue](https://cristijora.github.io/vue-paper-dashboard/) 
+
+
+> Admin dashboard based on paper dashboard UI template + vue-router
+
+This project is a NuxtJs SSR  Vue version of [Paper-dashboard](https://www.creative-tim.com/product/paper-dashboard)
+designed for VueJs developers.The dashboard includes vue-router and vuex
+
+Check the [Live Demo here](https://cristijora.github.io/vue-paper-dashboard).
+
 
 ## Build Setup
 
@@ -18,6 +27,11 @@ $ npm start
 # generate static project
 $ npm run generate
 ```
+
+## Demo
+![](http://i.imgur.com/3iC1hOs.gif)
+[Nuxt Version](https://github.com/cristijora/vue-paper-dashboard-nuxt)
+
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 
