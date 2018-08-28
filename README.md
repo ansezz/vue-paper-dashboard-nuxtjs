@@ -8,8 +8,9 @@
 This project is a NuxtJs SSR  Vue version of [Paper-dashboard](https://www.creative-tim.com/product/paper-dashboard)
 designed for VueJs developers.The dashboard includes vue-router and vuex
 
-Check the [Live Demo here](https://cristijora.github.io/vue-paper-dashboard).
-
+## Demo 
+* Nuxt Js version Deployed on Heroku [Live Demo here](https://vue-paper-dashboard-nuxtjs.herokuapp.com/)
+* Check the Vue Js Official demo[Live Demo here](https://cristijora.github.io/vue-paper-dashboard).
 
 ## Build Setup
 
@@ -28,7 +29,7 @@ $ npm start
 $ npm run generate
 ```
 
-## Demo
+### Screen
 ![](http://i.imgur.com/3iC1hOs.gif)
 [Nuxt Version](https://github.com/cristijora/vue-paper-dashboard-nuxt)
 
